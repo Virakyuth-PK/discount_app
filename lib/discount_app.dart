@@ -23,17 +23,21 @@ class DiscountCalculator extends StatefulWidget {
 
 class _DiscountCalculatorState extends State<DiscountCalculator> {
   final TextEditingController _originController = TextEditingController();
-  final TextEditingController _customDiscountController = TextEditingController();
-  final TextEditingController _discountedPriceController = TextEditingController();
+  final TextEditingController _customDiscountController =
+      TextEditingController();
+  final TextEditingController _discountedPriceController =
+      TextEditingController();
 
   double? _calculatedPrice;
-  bool _isReverseMode = false; // false: Calculate discounted price, true: Calculate original price
+  bool _isReverseMode =
+      false; // false: Calculate discounted price, true: Calculate original price
   List<String> _history = [];
 
   void _calculatePrice(double discount) {
     if (_isReverseMode) {
       // Calculate original price from discounted price
-      double? discountedPrice = double.tryParse(_discountedPriceController.text);
+      double? discountedPrice =
+          double.tryParse(_discountedPriceController.text);
       if (discountedPrice != null && discount > 0) {
         setState(() {
           _calculatedPrice = discountedPrice / (1 - discount / 100);
@@ -58,7 +62,8 @@ class _DiscountCalculatorState extends State<DiscountCalculator> {
 
     if (_isReverseMode) {
       // Reverse mode for custom input
-      double? discountedPrice = double.tryParse(_discountedPriceController.text);
+      double? discountedPrice =
+          double.tryParse(_discountedPriceController.text);
       if (discountedPrice != null && customDiscount != null) {
         setState(() {
           _calculatedPrice = discountedPrice / (1 - customDiscount / 100);
@@ -79,11 +84,11 @@ class _DiscountCalculatorState extends State<DiscountCalculator> {
   void _addToHistory(double value, double discount, double result) {
     String entry = _isReverseMode
         ? 'Discounted: \$ ${value.toStringAsFixed(2)}\n'
-        'Discount: $discount%\n'
-        'Original: \$ ${result.toStringAsFixed(2)}'
+            'Discount: $discount%\n'
+            'Original: \$ ${result.toStringAsFixed(2)}'
         : 'Original: \$ ${value.toStringAsFixed(2)}\n'
-        'Discount: $discount%\n'
-        'Discounted: \$ ${result.toStringAsFixed(2)}';
+            'Discount: $discount%\n'
+            'Discounted: \$ ${result.toStringAsFixed(2)}';
 
     _history.insert(0, entry);
     if (_history.length > 5) {
@@ -139,7 +144,10 @@ class _DiscountCalculatorState extends State<DiscountCalculator> {
                 children: List.generate(20, (index) {
                   int discount = (index + 1) * 5;
                   return ElevatedButton(
-                    onPressed: () => _calculatePrice(discount.toDouble()),
+                    onPressed: () {
+                      _calculatePrice(discount.toDouble());
+                      FocusScope.of(context).requestFocus(FocusNode());
+                    },
                     child: Text('$discount%'),
                   );
                 }),

@@ -1,7 +1,7 @@
 name: discount_app
 description: The **Discount Calculator** is a simple, offline tool that helps you quickly calculate the final price of a product after applying a discount. This tool is perfect for personal use, allowing you to determine your savings without needing an internet connection or dealing with ads.
 
-version: 1.0.0+1
+version: 1.0.0+2
 
 environment:
   sdk: ^3.6.0
