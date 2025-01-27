@@ -1,0 +1,1 @@
+fvm flutter build apk --dart-define=FLAVOR=dev -t lib/main_dev.dart

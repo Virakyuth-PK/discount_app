@@ -1,0 +1,49 @@
+app:
+  android:
+    flavorDimensions: "flavor-type"
+
+flavors:
+  prd:
+    app:
+      name: "Discount%"
+    android:
+      applicationId: "com.loba.discount_app"
+      flavorDimensions: "flavor-type"
+      icon: "assets/prd_logo.png"
+      adaptiveIcon:
+        foreground: "assets/prd_logo.png"
+        background: "assets/empty.png"
+    ios:
+      bundleId: "com.loba.discount_app"
+      icon: "assets/prd_logo.png"
+
+  dev:
+    app:
+      name: "Discount% DEV"
+    android:
+      applicationId: "com.loba.discount_app.dev"
+      flavorDimensions: "flavor-type"
+      icon: "assets/dev_logo.png"
+      adaptiveIcon:
+        foreground: "assets/dev_logo.png"
+        background: "assets/empty.png"
+    ios:
+      bundleId: "com.loba.discount_app.dev"
+      icon: "assets/dev_logo.png"
+
+
+ide: idea
+
+# comment assets => assets:download,assets:extract,assets:clean
+# comment android => android:androidManifest,android:buildGradle,android:dummyAssets,android:icons
+# comment flutter => flutter:flavors,flutter:main,flutter:targets,flutter:app,flutter:pages
+# comment ios => ios:podfile,ios:xcconfig,ios:buildTargets,ios:schema,ios:dummyAssets,ios:icons,ios:plist,ios:launchScreen
+# comment macos => macos:podfile,macos:xcconfig,macos:configs,macos:buildTargets,macos:schema,macos:dummyAssets,macos:icons,macos:plist
+# comment google => google:firebase
+# comment huawei => huawei:agconnect
+# comment ide => ide:config
+
+
+# fvm flutter pub run flutter_flavorizr -p
+
+# fvm flutter pub run flutter_flavorizr -p assets:download,assets:extract,android:androidManifest,android:buildGradle,android:dummyAssets,android:icons,ios:podfile,ios:xcconfig,ios:buildTargets,ios:schema,ios:dummyAssets,ios:icons,ios:plist,ios:launchScreen

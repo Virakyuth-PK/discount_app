@@ -1,0 +1,1 @@
+fvm flutter build ios --dart-define=FLAVOR=dev -t lib/main_dev.dart --flavor=dev

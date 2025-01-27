@@ -1,0 +1,1 @@
+fvm flutter build ios --dart-define=FLAVOR=prd -t lib/main_prd.dart --flavor=prd

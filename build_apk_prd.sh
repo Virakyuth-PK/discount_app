@@ -1,0 +1,1 @@
+fvm flutter build apk --dart-define=FLAVOR=prd -t lib/main_prd.dart

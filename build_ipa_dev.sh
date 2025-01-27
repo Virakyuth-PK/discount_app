@@ -1,0 +1,1 @@
+fvm flutter build ipa --dart-define=FLAVOR=dev -t lib/main_dev.dart --flavor=dev
